@@ -1,8 +1,9 @@
-package main
+package lab1
 
 import "fmt"
 
 // TODO: document this function.
-func PrefixToPostfix(input string)  (string, error) {
+// PrefixToPostfix converts
+func PrefixToPostfix(input string) (string, error) {
 	return "TODO", fmt.Errorf("TODO")
 }
