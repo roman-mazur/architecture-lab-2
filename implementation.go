@@ -1,5 +1,7 @@
 package main
 
-func PrefixToPostfix(input string) string {
-	return "TODO"
+import "fmt"
+
+func PrefixToPostfix(input string)  (string, error) {
+	return "TODO", fmt.Errorf("TODO")
 }
