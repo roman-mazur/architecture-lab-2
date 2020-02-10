@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"testing"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPrefixToPostfix(t *testing.T) {
-	res, _ := PrefixToPostfix("+ 5 * - 4 2 3")
-	expected := "4 2 - 3 * 5 +"
-	if res != expected {
-		t.Errorf("Unexpected conversion: %s vs %s", res, expected)
+	res, err := PrefixToPostfix("+ 5 * - 4 2 3")
+	if assert.Nil(t, err) {
+		assert.Equal(t, "4 2 - 3 * 5 +", res)
 	}
 }
 
