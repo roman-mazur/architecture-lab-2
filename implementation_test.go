@@ -1,9 +1,10 @@
-package lab1
+package lab2
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPrefixToPostfix(t *testing.T) {
