@@ -1,9 +1,9 @@
-// TODO: Rename to your own module.
+// TODO: Переіменуйте на власний модуль.
 module github.com/roman-mazur/architecture-lab-2
 
-go 1.17
+go 1.20
 
-// TODO: Change if need to use a different assertions library.
+// TODO: Змініть, якщо вам потрібно використовувати іншу бібліотеку.
 require github.com/stretchr/testify v1.7.0
 
 require (
