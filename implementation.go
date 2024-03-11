@@ -3,15 +3,21 @@ package lab2
 import (
 	"errors"
 	"strings"
+	"regexp"
 )
 
-// PrefixToPostfix converts prefix notation to postfix notation.
 func PrefixToPostfix(input string) (string, error) {
 	stack := []string{}
 	tokens := strings.Fields(input)
 
 	for i := len(tokens) - 1; i >= 0; i-- {
 		token := tokens[i]
+	
+
+		if(!isNumber(token) && !isOperator(token[0])){
+			return "", errors.New("invalid character")
+		}
+
 		if isOperator(token[0]) {
 			if len(stack) < 2 {
 				return "", errors.New("not enough operands for operator")
@@ -27,11 +33,15 @@ func PrefixToPostfix(input string) (string, error) {
 		}
 	}
 
-	if len(stack) != 1 {
-		return "", errors.New("invalid expression format")
-	}
-
 	return stack[0], nil
+}
+
+
+func isNumber(input string) bool {
+	pattern := `^[+-]?\d*\.?\d+$`
+	re := regexp.MustCompile(pattern)
+
+	return re.MatchString(input)
 }
 
 func isOperator(ch byte) bool {
