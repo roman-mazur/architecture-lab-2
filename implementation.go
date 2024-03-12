@@ -7,6 +7,11 @@ import (
 )
 
 func PrefixToPostfix(input string) (string, error) {
+	trimmedInput := strings.TrimSpace(input)
+	if trimmedInput == "" {
+		return "", errors.New("input string contains only whitespace characters")
+	}
+
 	stack := []string{}
 	tokens := strings.Fields(input)
 
